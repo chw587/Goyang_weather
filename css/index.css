@@ -1,0 +1,250 @@
+:root {
+    /* ── 색상 ── */
+    --main: #3751E4;
+    --sub_main: #627FD9;
+    --sub_text: #A0A5A6;
+    --black: #111;
+    --white: #fafafa;
+
+    /* ── 포인트 컬러 ── */
+    --color-temp: #FFB72B;
+    --color-dust: #33CC99;
+    --color-surface: #E86B9E;
+    --color-humidity: #2ED8FF;
+    --color-wind: #8597FF;
+
+    /* ── 카드 그라데이션 ── */
+    --card-gradient: linear-gradient(90deg, var(--main) 0%, var(--sub_main) 50%, var(--main) 100%);
+
+    /* ── 공통 수치 ── */
+    --radius-pill: 999px;
+    --radius-card: 24px;
+    --glow-blur: 0 0 10px 1px;
+
+    /* ── 그래프 ── */
+    --graph-size: 200px;
+    --graph-stroke: 14;
+    --graph-dasharray: 282.6;
+}
+
+/* ======================================================
+    base
+====================================================== */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ======================================================
+    header
+====================================================== */
+header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background-color: var(--main);
+}
+
+header>* {
+    font-size: 4vw;
+}
+
+header .logo {
+    width: 7vw;
+}
+
+/* ======================================================
+    main grid
+====================================================== */
+main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    flex: 1;
+    padding: 20px;
+}
+
+/* ======================================================
+    item 카드
+====================================================== */
+.item {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: var(--radius-card);
+    background: var(--card-gradient);
+}
+
+.item_header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding-bottom: 16px;
+}
+
+.item_title {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+}
+
+.item_title p,
+.state_text {
+    font-size: 2vw;
+}
+
+.item_title span {
+    font-size: 1vw;
+    color: var(--sub_text);
+    margin-bottom: 5px;
+}
+
+.item_state {
+    width: 16px;
+    height: 16px;
+    border-radius: var(--radius-pill);
+}
+
+.state_text {
+    border: 4px solid var(--white);
+    padding: 16px 32px;
+    border-radius: var(--radius-pill);
+}
+
+.item_main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.item_main .icon {
+    width: 30%;
+    text-align: center;
+}
+
+.item_main .item_icon {
+    width: 100%;
+    height: 7vw;
+    stroke-width: 1px;
+}
+
+.item_main>div {
+    display: flex;
+    align-items: end;
+    gap: 4px;
+}
+
+.item_main>div p {
+    font-size: 8vw;
+}
+
+.item_main>div span {
+    font-size: 4vw;
+    margin-bottom: 20px;
+}
+
+.dust .item_main {
+    justify-content: space-around;
+}
+
+/* ======================================================
+    포인트 컬러
+====================================================== */
+
+/* 기온 */
+.temp .item_state {
+    background: var(--color-temp);
+    box-shadow: var(--glow-blur) var(--color-temp);
+}
+
+.temp .item_icon {
+    color: var(--color-temp);
+}
+
+/* 미세먼지 */
+.dust .item_state {
+    background: var(--color-dust);
+    box-shadow: var(--glow-blur) var(--color-dust);
+}
+
+.dust .state_text {
+    color: var(--color-dust);
+    border-color: var(--color-dust);
+}
+
+/* 노면온도 */
+.surface_temp .item_state {
+    background: var(--color-surface);
+    box-shadow: var(--glow-blur) var(--color-surface);
+}
+
+.surface_temp .item_icon {
+    color: var(--color-surface);
+}
+
+/* 습도 */
+.humidity .item_state {
+    background: var(--color-humidity);
+    box-shadow: var(--glow-blur) var(--color-humidity);
+}
+
+.humidity .item_icon {
+    color: var(--color-humidity);
+}
+
+/* 풍속 */
+.wind_speed .item_state {
+    background: var(--color-wind);
+    box-shadow: var(--glow-blur) var(--color-wind);
+}
+
+.wind_speed .item_icon {
+    color: var(--color-wind);
+}
+
+/* ======================================================
+    그래프
+====================================================== */
+.graph_wrap {
+    position: relative;
+    width: var(--graph-size);
+    height: var(--graph-size);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.graph {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    overflow: visible;
+}
+
+.graph circle {
+    fill: none;
+    stroke: var(--white);
+    stroke-width: var(--graph-stroke);
+    stroke-linecap: round;
+}
+
+.graph_bar {
+    stroke-dasharray: var(--graph-dasharray);
+    stroke-dashoffset: var(--graph-dasharray);
+    transition: stroke-dashoffset 1s ease-out, stroke 1s ease-out;
+}
+
+.graph_text {
+    position: absolute;
+    color: var(--white);
+    font-size: 3vw;
+    font-weight: bold;
+    top: 50%;
+    transform: translateY(-50%);
+}

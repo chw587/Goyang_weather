@@ -1,0 +1,257 @@
+@charset "UTF-8";
+:root {
+    /* ── 색상 ── */
+    --main: #3751E4;
+    --sub_main: #627FD9;
+    --sub_text: #A0A5A6;
+    --black: #111;
+    --white: #fafafa;
+
+    /* ── 포인트 컬러 ── */
+    --color-temp: #FFB72B;
+    --color-dust: #33CC99;
+    --color-surface: #E86B9E;
+    --color-humidity: #2ED8FF;
+    --color-wind: #8597FF;
+
+    /* ── 카드 그라데이션 ── */
+    --card-gradient: linear-gradient(90deg, var(--main) 0%, var(--sub_main) 50%, var(--main) 100%);
+
+    /* ── 공통 수치 ── */
+    --radius-pill: 999px;
+    --radius-card: 24px;
+    --glow-blur: 0 0 10px 1px;
+
+    /* ── 그래프 ── */
+    --graph-size: 200px;
+    --graph-stroke: 14;
+    --graph-dasharray: 282.6;
+}
+
+/* ============================================================
+   FONT
+   ============================================================ */
+   @font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Thin.otf') format('opentype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-ExtraLight.otf') format('opentype');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Light.otf') format('opentype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Medium.otf') format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-SemiBold.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Black.otf') format('opentype');
+    font-weight: 900;
+}
+
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* font-size: 100%;
+    font: inherit; */
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    flex: 1;
+}
+
+
+/* ============================================================
+   BASE
+   ============================================================ */
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Pretendard', sans-serif;
+    color: var(--white);
+}
+
+table th,
+table td {
+    height: 40px;
+    font-weight: normal;
+    text-align: center;
+    align-content: center;
+}
+
+input,
+select {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
